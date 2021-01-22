@@ -1,0 +1,10 @@
+SECRET_KEY = PLace Your Django Secret Key here
+DEBUG = Want to enable debug or not ? True/False
+EMAIL_HOST_USER = Your Email ID
+EMAIL_HOST = Email service provider (like for Gmail 'smtp.gmail.com')
+EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = Email Password
+STATIC_PATH = Path of static files on your computer
+TWILIO_SID = Your Twilio SID
+TWILIO_AUTH_TOKEN = Your Twilio Auth token
+TWILIO_NUM = Twilio Phone number

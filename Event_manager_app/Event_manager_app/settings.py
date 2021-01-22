@@ -30,7 +30,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_PORT = 587
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool, default=True)
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
@@ -133,5 +133,5 @@ STATIC_URL = '/static/'
 # Added manually
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    'Users/lenovo/Desktop/Event_manager_app',
+    config('STATIC_PATH'),
 ]
