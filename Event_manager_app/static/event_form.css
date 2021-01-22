@@ -1,0 +1,67 @@
+body{
+    background-color:rgba(228, 228, 235, 0.329);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+form{
+    border: 3px solid rgba(0, 0, 0, 0.575);
+    border-radius : 0.2cm;
+    box-sizing : border-box;
+    position : relative;
+    margin : 1% 27.5% 0 27.5%;
+    width: 45%;
+    background-color: rgba(206, 211, 212, 0.63);
+    padding-left : 10px;
+    padding-bottom : 10px;
+}
+
+h2{
+    font-size:300;
+    color:rgba(0, 0, 0, 0.911); 
+}
+
+#name{ margin : 0 0 6px 0; }
+#desc { margin : 6px 0;}
+#desc_label {
+    text-align: right;
+    vertical-align: top;
+}
+#loc{
+    margin : 6px 0 6px 16px;
+    -ms-perspective-origin-x: 40cm;
+}
+#from{
+    margin : 6px 0 6px 43px;
+}
+#to{
+    margin : 6px 0 6px 66px;
+}
+#deadline{
+    margin : 6px 0 6px 15px;
+}
+#pswd{
+    margin : 6px 0 6px 0px;
+}
+#email{
+    margin : 6px 0 6px 0px;
+}
+#reset{
+    margin : 5px 10px 0 5px;
+}
+#home{
+    text-align: center;
+    vertical-align: bottom;
+}
+#fromTime{
+    margin : 0.5cm 0 0 0;
+}
+div.container {
+    position: relative;
+    font-size: 20px;
+    left : 0;
+    right : 0;
+    bottom: 0;
+    top : 15px;
+    text-align: center;
+}

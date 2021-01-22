@@ -1,0 +1,53 @@
+body{
+    background-color:rgba(228, 228, 235, 0.329);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+form{
+    border: 3px solid rgba(0, 0, 0, 0.575);
+    border-radius: 0.2cm;
+    box-sizing: border-box;
+    position:relative;
+    margin-top: 3%;
+    left:25%;
+    width: 50%;
+    background-color: rgba(206, 211, 212, 0.63);
+    padding : 10px;
+}
+
+h2{
+    font-size: 30px;
+    color:rgba(0, 0, 0, 0.911); 
+}
+
+#name{ 
+    margin : 6px 0 6px 7%; 
+}
+#contact{ 
+    margin : 6px 0 6px 0; 
+}
+#email{ 
+    margin : 6px 0 6px 2.8%; 
+}
+.register{ 
+    margin : 6px 0 6px 0; 
+}
+#people{ 
+    margin : 6px 0 6px 0; 
+}
+#reset{ 
+    margin : 6px 10px 6px 5px; 
+}
+#sel{
+    margin : 0 0 0 7%;
+}
+div.container {
+    position: relative;
+    font-size: 20px;
+    left : 0;
+    right : 0;
+    bottom: 0;
+    top : 10px;
+    text-align: center;
+}

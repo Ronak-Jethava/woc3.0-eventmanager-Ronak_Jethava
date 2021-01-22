@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Event Dashboard </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+<body>
+
+<div id="form">
+<form action="eventDashboard" method="POST">
+    <h1 align="center"> Event Dashboard Login </h1>
+    {% csrf_token %}
+    <label for="id"> Event ID &nbsp: </label>
+    <input type="number" min='0' id="id" name = "id" required> <br>
+    
+    <label for="pswd"> Password : </label>
+    <input type="password" id="pswd" name = "pswd" required> <br>
+    <input type="submit" id='submit'>
+</form>
+</div>
+    <div class="container">
+        <a href="http://127.0.0.1:8000/"> Home </a>
+    </div>
+</body>
+</html>

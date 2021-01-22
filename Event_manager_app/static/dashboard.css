@@ -1,0 +1,50 @@
+body{
+    background-color:rgba(228, 228, 235, 0.329);
+    font-size: 20px;
+    font-weight: 300;
+}
+
+form{
+    border : 3px solid rgba(0, 0, 0, 0.575);
+    position : relative;
+    width : 40%;
+    height: 50%;
+    left : 30%;
+    top : 20%;
+    margin-top : 10%;
+    background-color: rgba(206, 211, 212, 0.63);
+    padding : 0 20px 20px 20px;
+}
+h1{
+    font-size : 40px;
+}
+
+label{
+    font-size : 30px;
+}
+#id{
+    font-size : 30px;
+    margin-bottom: 1cm;
+    margin-top: 0.5cm;
+}
+#pswd{
+    font-size : 30px;
+    margin-bottom: 1cm;
+}
+
+#submit{
+    width : 15%;
+    height : 10%;
+    font-size: 20px;
+    margin-left: 38%;
+}
+
+div.container {
+    position: relative;
+    font-size: 25px;
+    left : 0;
+    right : 0;
+    bottom: 0;
+    top : 25px;
+    text-align: center;
+}

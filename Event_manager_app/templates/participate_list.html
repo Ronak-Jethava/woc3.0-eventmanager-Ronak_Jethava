@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'participate_list.css' %}">
+    <title> Event Dashboard </title>
+</head>
+<body>
+    No. of Participates : {{ length }}
+    <hr>
+    {% if participate_details %}
+        {% for item in participate_details %}
+            Name : {{ item.name }} <br>
+            ID : {{ item.id }} <br>
+            Email ID : {{ item.email }} <br>
+            Contact no : {{ item.contact }} <br>
+            Registered people : {{ item.no_of_people }} <br>
+            <hr>
+        {% endfor %}
+    {% else %}
+        No participates are here.
+    {% endif %}
+</body>
+</html>

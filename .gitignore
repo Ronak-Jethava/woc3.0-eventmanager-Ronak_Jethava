@@ -1,0 +1,3 @@
+.env
+/Event_manager_app/settings.py
+db.sqlite3
