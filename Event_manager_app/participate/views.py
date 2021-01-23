@@ -28,11 +28,9 @@ def form(request):
         event_id = lst[1][1:-1]
 
         event_details = Event.objects.get(id__exact=event_id)
-        isContact = Participate.objects.filter(contact__exact=contact)
-        isEmail = Participate.objects.filter(email__exact=email)
-       
-        if not(isContact or isEmail):
-            print('1')
+        isRegistered = Participate.objects.filter(contact__exact=contact, email__exact=email, event__exact=event)
+
+        if not isRegistered:
             if request.POST.get('isGroup') == '1':
                 data = Participate(name=name, event=event_name, contact=contact, email=email, no_of_people='1')
                 data.save()
