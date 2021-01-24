@@ -1,149 +1,155 @@
 <!DOCTYPE html>
 <!-- my html code starts here -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Participate Registration </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'participate_form.css' %}">
-    {% comment %} <style>
-    * {
-    box-sizing: border-box;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-/* Style the list (remove margins and bullets, etc) */
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-/* Style the list items */
-    ul li {
-        border: 1px solid #ddd;
-        margin-top: -1px; /* Prevent double borders */
-        background-color: #f6f6f6;
-        padding: 12px;
-        text-decoration: none;
-        font-size: 18px;
-        color: black;
-        display: block;
-        position: relative;
-    }
+        ul li {
+            border: 1px solid #ddd;
+            margin-top: -1px;
+            /* Prevent double borders */
+            background-color: #b8ccca;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            position: relative;
+        }
 
-/* Add a light grey background color on hover */
-    ul li:hover {
-        background-color: #eee;
-    }
+        ul li:hover {
+            background-color: #b8cccab7;
+        }
 
-/* Style the close button (span) */
-    .close {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        right: 0%;
-        padding: 12px 16px;
-        transform: translate(0%, -50%);
-    }
+        .close {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            right: 0%;
+            padding: 12px 16px;
+            transform: translate(0%, -50%);
+        }
 
-    .close:hover {background: #bbb;}
-    </style> {% endcomment %}
+        .close:hover {
+            background: #bbb;
+        }
+    </style>
 
     <script>
-    
-    function Enable_it(Id){
-        document.getElementById(Id).disabled = false;
-    }
-    
-    function disable_it(){
-        document.getElementById("people").disabled = true;
-    }
-    
-    function remove_it(){
-    var closebtns = document.getElementsByClassName("close");
-    var i;
 
-    /* Loop through the elements, and hide the parent, when clicked on */
-    for (i = 0; i < closebtns.length; i++) {
-        closebtns[i].addEventListener("click", function() {
-        this.parentElement.style.display = 'none';
-    });
-    }
-    }
+        function Enable_it(Id) {
+            document.getElementById(Id).disabled = false;
+        }
+
+        function disable_it() {
+            document.getElementById("people").disabled = true;
+        }
+
+        function remove_it() {
+            var closebtns = document.getElementsByClassName("close");
+            var i;
+
+            /* Loop through the elements, and hide the parent, when clicked on */
+            for (i = 0; i < closebtns.length; i++) {
+                closebtns[i].addEventListener("click", function () {
+                    this.parentElement.style.display = 'none';
+                });
+            }
+        }
+
+        $('form').each(function () {
+            this.reset();
+        });
     </script>
 
 </head>
+
 <body>
 
-<hr>
+    <hr>
 
-{% if messages %}
-    <ul> 
+    {% if messages %}
+    <ul>
         {% for msg in messages %}
-            <li> {{ msg }} <span class="close" onclick="remove_it()"> x </span> </li>
+        <li> {{ msg }} <span class="close" onclick="remove_it()"> x </span> </li>
         {% endfor %}
     </ul>
-{% endif %}
+    {% endif %}
 
-{% if up_events %}
+    {% if up_events %}
     {% for event in up_events %}
-        <div style="text-indent:4cm"> <b> {{event.name}} </b></div>
-        <div style="text-indent:4cm"> <b> Event ID :  </b> {{event.id}}<br><br></div>
-        <div style="text-indent:4cm"> <b> Description </b> : {{event.desc}} <br><br></div>
-        <div style="text-indent:4cm"> <b> Begin </b>       : {{event.start_date}} at {{event.start_time}} <br></div>
-        <div style="text-indent:4cm"> <b> Conclude </b>   : {{event.end_date}} at {{event.end_time}} <br></div>
-        <div style="text-indent:4cm"> <b> Registration Ends </b>   : {{event.last_date}} at {{event.last_time}} <br></div>
-        <div style="text-indent:4cm"> <b> Venue </b> : {{event.location}} <br></div>
-        <hr>
+    <div style="text-indent:4cm"> <b> {{event.name}} </b></div>
+    <div style="text-indent:4cm"> <b> Event ID : </b> {{event.id}}<br><br></div>
+    <div style="text-indent:4cm"> <b> Description </b> : {{event.desc}} <br><br></div>
+    <div style="text-indent:4cm"> <b> Begin </b> : {{event.start_date}} at {{event.start_time}} <br></div>
+    <div style="text-indent:4cm"> <b> Conclude </b> : {{event.end_date}} at {{event.end_time}} <br></div>
+    <div style="text-indent:4cm"> <b> Registration Ends </b> : {{event.last_date}} at {{event.last_time}} <br></div>
+    <div style="text-indent:4cm"> <b> Venue </b> : {{event.location}} <br></div>
+    <hr>
     {% endfor %}
-{% else %}
+    {% else %}
     There is NO EVENT.
-{% endif %}
+    {% endif %}
 
 
-<form action="participateRegistration" method="POST">
-    {% csrf_token %}
-    <h2 align="center"> Participate Registration </h2>
-    <div>
-        <label for="name"> Name : </label>
-        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-    </div>
-    <div>
-        <label for="contact"> Contact No : </label>
-        <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
-    </div>
-    <div>
-        <label for="email"> Email ID : </label>
-        <input type="text" id="email" name="email" placeholder="example@gmail.com" required>
-    </div>
-    <div>
-        <label for="sel"> Event : </label>
-        <select id="sel" name = "event">
-            {% if up_events %}
+    <form action="participateRegistration" method="POST">
+        {% csrf_token %}
+        <h2 align="center"> Participate Registration </h2>
+        <div>
+            <label for="name"> Name : </label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div>
+            <label for="contact"> Contact No : </label>
+            <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+        </div>
+        <div>
+            <label for="email"> Email ID : </label>
+            <input type="text" id="email" name="email" placeholder="example@gmail.com" required>
+        </div>
+        <div>
+            <label for="sel"> Event ID : </label>
+            <select id="sel" name="event_id">
+                {% if up_events %}
                 {% for event in up_events %}
-                    <option> {{ event.name }} ({{event.id}}) </option><br>
+                <option> {{event.id}} </option><br>
                 {% endfor %}
-            {% endif %}
-        </select>
-    </div>
-    <div class="register">
-        <label for="register_type"> Registration Type :</label>
-        <input type="radio" id="register_type" name="isGroup"  value="1" onclick="disable_it()"> Individual
-        <input type="radio" id="register_type" name="isGroup" value="2" onclick='Enable_it("people")'> Group
-    </div>
-    <div>
-        <label for="people"> No. of Participates :</label>
-        <input type="number" id="people" min='2' max = '100' name="no_of_people" placeholder="2" value = "2" disabled>
-    </div>
-    <br>
-    <div>
-        <input type='reset' id='reset'>
-        <input type="submit" id='submit'>
-    </div>
-</form>
+                {% endif %}
+            </select>
+        </div>
+        <div class="register">
+            <label for="register_type"> Registration Type :</label>
+            <input type="radio" id="register_type" name="isGroup" value="1" onclick="disable_it()"> Individual
+            <input type="radio" id="register_type" name="isGroup" value="2" onclick='Enable_it("people")'> Group
+        </div>
+        <div>
+            <label for="people"> No. of Participates :</label>
+            <input type="number" id="people" min='2' max='100' name="no_of_people" placeholder="2" value="2" disabled>
+        </div>
+        <br>
+        <div>
+            <input type='reset' id='reset'>
+            <input type="submit" id='submit'>
+        </div>
+    </form>
     <div class="container">
         <a href="http://127.0.0.1:8000/"> Home </a>
     </div>
 </body>
+
 </html>

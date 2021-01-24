@@ -22,21 +22,18 @@ def form(request):
         contact = request.POST.get('contact')
         if(len(contact) == 10):
             contact = '+91'+contact
-        event= request.POST.get('event')
-        lst = list(event.split(' '))
-        event_name = lst[0]
-        event_id = lst[1][1:-1]
-
+        event_id= request.POST.get('event_id')
+        
         event_details = Event.objects.get(id__exact=event_id)
-        isRegistered = Participate.objects.filter(contact__exact=contact, email__exact=email, event__exact=event)
+        isRegistered = Participate.objects.filter(contact__exact=contact, email__exact=email, event__exact=event_details.name)
 
         if not isRegistered:
             if request.POST.get('isGroup') == '1':
-                data = Participate(name=name, event=event_name, contact=contact, email=email, no_of_people='1')
+                data = Participate(name=name, event=event_details.name, contact=contact, email=email, no_of_people='1')
                 data.save()
             else :
                 no_of_people = request.POST.get('no_of_people')
-                data = Participate(name=name, event=event_name, contact=contact, email=email, no_of_people=no_of_people)
+                data = Participate(name=name, event=event_details.name, contact=contact, email=email, no_of_people=no_of_people)
                 data.save()
 
             subject = "Registration successful"

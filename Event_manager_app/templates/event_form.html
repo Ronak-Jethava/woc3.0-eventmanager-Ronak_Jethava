@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,119 +8,129 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'event_form.css' %}">
     <style>
-    * {
-    box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    ul {
-        list-style-type: none;
-        padding: 1 cm;
-        margin: 0;
-    }
+        ul {
+            list-style-type: none;
+            padding: 1 cm;
+            margin: 0;
+        }
 
-    ul li {
-        border: 1px solid #ddd;
-        margin-top: -1px; /* Prevent double borders */
-        background-color: #f6f6f6;
-        padding: 12px;
-        text-decoration: none;
-        font-size: 18px;
-        color: black;
-        display: block;
-        position: relative;
-    }
+        ul li {
+            border: 1px solid #ddd;
+            margin-top: -1px;
+            /* Prevent double borders */
+            background-color: #b8ccca;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            position: relative;
+        }
 
-    ul li:hover {
-        background-color: #eee;
-    }
+        ul li:hover {
+            background-color: #b8cccab7;
+        }
 
-    .close {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        right: 0%;
-        padding: 12px 16px;
-        transform: translate(0%, -50%);
-    }
+        .close {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            right: 0%;
+            padding: 12px 16px;
+            transform: translate(0%, -50%);
+        }
 
-    .close:hover {background: #bbb;}
+        .close:hover {
+            background: #bbb;
+        }
     </style>
 
     <script>
-    function remove_it(){
-    var closebtns = document.getElementsByClassName("close");
-    var i;
+        function remove_it() {
+            var closebtns = document.getElementsByClassName("close");
+            var i;
 
-    /* Loop through the elements, and hide the parent, when clicked on */
-    for (i = 0; i < closebtns.length; i++) {
-        closebtns[i].addEventListener("click", function() {
-        this.parentElement.style.display = 'none';
-    });
-    }
-    }
+            /* Loop through the elements, and hide the parent, when clicked on */
+            for (i = 0; i < closebtns.length; i++) {
+                closebtns[i].addEventListener("click", function () {
+                    this.parentElement.style.display = 'none';
+                });
+            }
+        }
+
+        $('form').each(function () {
+            this.reset();
+        });
     </script>
 </head>
+
 <body>
 
-{% comment %} display messages {% endcomment %}
-{% if messages %}
-    <ul> 
+    {% if messages %}
+    <ul>
         {% for msg in messages %}
+        <div>
             <li> {{ msg }} <span class="close" onclick="remove_it()"> x </span> </li>
+        </div>
         {% endfor %}
     </ul>
-{% endif %}
+    {% endif %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <h2 align="center"> Event Registration </h2>
-    <div>
-        <label for="name"> Event Name : </label>
-        <input type="text" id="name" name="name" placeholder="Enter the event name" required>
-    </div>
-    <div>
-        <label id = "desc_label" for="desc"> Description &nbsp: </label>
-        <textarea rows="10" cols="50" id="desc" name="desc" required> </textarea>
-    </div>
-    <div>
-        <label for="loc"> Location : </label>
-        <input type="text" id="loc" name="loc" required>
-    </div>
-    <div>
-        <label for="poster"> Poster : </label> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <input type="file" id="poster" name="poster">
-    </div>
-    <div>
-        <label for="from"> From : </label>
-        <input type="date" id="from" name="start_date" required>
-        <input type="time" id="fromTime" name="start_time" required>
-    </div>
-    <div>
-        <label for="to"> To : </label>
-        <input type="date" id="to" name="end_date" required>
-        <input type="time" id="toTime" name="end_time" required>
-    </div>
-    <div>
-        <label for="deadline"> Deadline : </label>
-        <input type="date" id="deadline" name="last_date" required>
-        <input type="time" id="deadlineTime" name="last_time" required>
-    </div>
-    <div>
-        <label for="email"> Host email : </label>
-        <input type="email" id="email" name="email" placeholder="example@gamil.com" required>
-    </div>
-    <div>
-        <label for="pswd"> Password &nbsp&nbsp: </label>
-        <input type="password" id="pswd" name="pswd" required>
-    </div>
-    <br>
-    <div>
-    <button type='reset' id='reset'> Reset </button> 
-    <button type="submit" id='submit'> Submit </button> 
-    </div>
-</form>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h2 align="center"> Event Registration </h2>
+        <div>
+            <label for="name"> Event Name : </label>
+            <input type="text" id="name" name="name" placeholder="Enter the event name" required>
+        </div>
+        <div>
+            <label id="desc_label" for="desc"> Description &nbsp: </label>
+            <textarea rows="10" cols="50" id="desc" name="desc" required> </textarea>
+        </div>
+        <div>
+            <label for="loc"> Location : </label>
+            <input type="text" id="loc" name="loc" required>
+        </div>
+        <div>
+            <label for="poster"> Poster : </label> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <input type="file" id="poster" name="poster">
+        </div>
+        <div>
+            <label for="from"> From : </label>
+            <input type="date" id="from" name="start_date" required>
+            <input type="time" id="fromTime" name="start_time" required>
+        </div>
+        <div>
+            <label for="to"> To : </label>
+            <input type="date" id="to" name="end_date" required>
+            <input type="time" id="toTime" name="end_time" required>
+        </div>
+        <div>
+            <label for="deadline"> Deadline : </label>
+            <input type="date" id="deadline" name="last_date" required>
+            <input type="time" id="deadlineTime" name="last_time" required>
+        </div>
+        <div>
+            <label for="email"> Host email : </label>
+            <input type="email" id="email" name="email" placeholder="example@gamil.com" required>
+        </div>
+        <div>
+            <label for="pswd"> Password &nbsp&nbsp: </label>
+            <input type="password" id="pswd" name="pswd" required>
+        </div>
+        <br>
+        <div>
+            <button type='reset' id='reset'> Reset </button>
+            <button type="submit" id='submit'> Submit </button>
+        </div>
+    </form>
     <div class="container">
         <a href="http://127.0.0.1:8000/"> Home </a>
     </div>
 </body>
+
 </html>
