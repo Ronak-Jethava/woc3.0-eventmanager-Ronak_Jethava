@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from event.models import Event
 import random
 import array as arr
@@ -20,6 +20,7 @@ def form(request):
         last_time = request.POST.get('last_time')
         email = request.POST.get('email')
         pswd = request.POST.get('pswd')
+        thisPage = request.POST.get('this_page')
         obj = datetime.datetime.now()
     
         if not Event.objects.filter(email__exact=email,name__exact=name, start_date__exact=start_date,end_date__exact=end_date, start_time__exact=start_time, end_time__exact=end_time, location__exact=location):
@@ -34,4 +35,5 @@ def form(request):
             messages.success(request, 'Registration succesfull.')
         else :
             messages.error(request, "You have already registerd")
+        return redirect(thisPage)
     return render(request, "event_form.html")

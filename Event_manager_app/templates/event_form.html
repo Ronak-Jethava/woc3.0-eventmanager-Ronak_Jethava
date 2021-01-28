@@ -49,22 +49,24 @@
         }
     </style>
 
-    <script>
+    <script type="text/javascript">
         function remove_it() {
             var closebtns = document.getElementsByClassName("close");
             var i;
 
-            /* Loop through the elements, and hide the parent, when clicked on */
             for (i = 0; i < closebtns.length; i++) {
                 closebtns[i].addEventListener("click", function () {
                     this.parentElement.style.display = 'none';
                 });
             }
         }
-
-        $('form').each(function () {
-            this.reset();
-        });
+        function location.reload(){ }
+        function submitForm(){
+            var frm = documentGetElementByName('form');
+            frm.submit();
+            frm.reset();
+            return false;
+        }
     </script>
 </head>
 
@@ -80,7 +82,7 @@
     </ul>
     {% endif %}
 
-    <form action="" method="POST">
+    <form name="form" action="" method="POST">
         {% csrf_token %}
         <h2 align="center"> Event Registration </h2>
         <div>
@@ -122,14 +124,15 @@
             <label for="pswd"> Password &nbsp&nbsp: </label>
             <input type="password" id="pswd" name="pswd" required>
         </div>
+        <input type="hidden" value="{{request.path}}" name="this_page">
         <br>
         <div>
             <button type='reset' id='reset'> Reset </button>
-            <button type="submit" id='submit'> Submit </button>
+            <button type='submit' id='submit' onclick="submitForm()"> Submit </button>
         </div>
     </form>
     <div class="container">
-        <a href="http://127.0.0.1:8000/"> Home </a>
+        <button id="home" onclick="window.location.href='http://127.0.0.1:8000/'">  << Back to Home </button>
     </div>
 </body>
 

@@ -9,11 +9,12 @@ form{
     border-radius : 0.2cm;
     box-sizing : border-box;
     position : relative;
-    margin : 1% 27.5% 0 27.5%;
-    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    width:fit-content;
     background-color: rgba(206, 211, 212, 0.63);
-    padding-left : 10px;
-    padding-bottom : 10px;
+    padding: 0 30px 10px 20px;
+    font-weight: 500;
 }
 
 h2{
@@ -47,14 +48,37 @@ h2{
     margin : 6px 0 6px 0px;
 }
 #reset{
-    margin : 5px 10px 0 5px;
+    margin : 5px 10px 5px 7px;
+    padding: 5px 12px 5px 12px;
+    background-color: rgba(0, 0, 0, 0.651);
+    border: 1px solid #21252594;
+    border-radius: 0.1cm;
+    color: white;
 }
-#home{
-    text-align: center;
-    vertical-align: bottom;
+#submit{
+    margin : 5px 10px 5px 7px;
+    padding: 5px 12px 5px 12px;
+    background-color: rgba(0, 0, 0, 0.651);
+    border: 1px solid #21252594;
+    border-radius: 0.1cm;
+    color: white;
+}
+#reset:hover{
+    background-color: rgba(0, 0, 0, 0.85);
+}
+#submit:hover{
+    background-color: rgba(0, 0, 0, 0.85);
 }
 #fromTime{
     margin : 0.5cm 0 0 0;
+}
+#home{
+    margin : 0 10px 10px 7px;
+    padding: 5px 12px 5px 12px;
+    background-color: rgba(0, 0, 0, 0.651);
+    border: 1px solid #21252594;
+    border-radius: 0.1cm;
+    color: white;
 }
 div.container {
     position: relative;

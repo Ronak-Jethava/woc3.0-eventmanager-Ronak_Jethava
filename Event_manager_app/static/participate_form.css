@@ -10,25 +10,29 @@ form{
     box-sizing: border-box;
     position:relative;
     margin-top: 3%;
-    left:25%;
-    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
     background-color: rgba(206, 211, 212, 0.63);
-    padding : 10px;
+    padding-left : 20px;
+    padding-bottom: 10px;
 }
 
 h2{
     font-size: 30px;
     color:rgba(0, 0, 0, 0.911); 
+    padding-left: 2cm;
+    padding-right: 2cm;
 }
 
 #name{ 
-    margin : 6px 0 6px 7%; 
+    margin : 6px 0 6px 9.5%; 
 }
 #contact{ 
     margin : 6px 0 6px 0; 
 }
 #email{ 
-    margin : 6px 0 6px 2.8%; 
+    margin : 6px 0 6px 3.7%; 
 }
 .register{ 
     margin : 6px 0 6px 0; 
@@ -36,11 +40,41 @@ h2{
 #people{ 
     margin : 6px 0 6px 0; 
 }
-#reset{ 
+/* #reset{ 
     margin : 6px 10px 6px 5px; 
+} */
+#reset{
+    margin : 5px 10px 5px 7px;
+    padding: 5px 12px 5px 12px;
+    background-color: rgba(0, 0, 0, 0.671);
+    border: 1px solid #21252594;
+    border-radius: 0.1cm;
+    color: white;
+}
+#submit{
+    margin : 5px 10px 5px 7px;
+    padding: 5px 12px 5px 12px;
+    background-color: rgba(0, 0, 0, 0.671);
+    border: 1px solid #21252594;
+    border-radius: 0.1cm;
+    color: white;
+}
+#submit:hover{
+    background-color: rgba(0, 0, 0, 0.85);
+}
+#reset:hover{
+    background-color: rgba(0, 0, 0, 0.85);
+}
+#home{
+    margin : 10px 10px 5px 7px;
+    padding: 5px 12px 5px 12px;
+    background-color: rgba(0, 0, 0, 0.651);
+    border: 1px solid #21252594;
+    border-radius: 0.1cm;
+    color: white;
 }
 #sel{
-    margin : 0 0 0 7%;
+    margin : 0 0 0 4%;
 }
 div.container {
     position: relative;

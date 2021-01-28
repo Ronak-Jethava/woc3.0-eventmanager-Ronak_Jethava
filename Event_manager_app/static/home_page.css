@@ -1,35 +1,50 @@
 body{
-    /* background-color:rgba(214, 214, 223, 0.932); */
     background-color:rgba(228, 228, 235, 0.329);
 }
 div {
     border:5px solid #657a7a;
     border-radius: 0.6cm;
     background-color : rgba(206, 211, 212, 0.63);
-    height : 10cm;
-    width : 50%;
+    height : fit-content;
+    width : fit-content;
     margin : 9% 0 0 25%;
+    margin-left: auto;
+    margin-right: auto; 
+    padding : 0 5% 0 5%;
 }
 
 h1{ 
     font-size: 56px; 
-    color:rgba(24, 20, 23, 0.836); 
+    color:rgba(24, 20, 23, 0.836);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button{
     border: 1.7px solid #21252594;
-    font-size : 25px;
+    font-size : 150%;
     color:rgba(0, 0, 0, 0.829);
-    width : 9cm;
-    height: 1.2cm;
+    position: relative;
+    width : 65%;
+    height: auto;
     border-radius: 0.4cm;
-    /* background-color: #7d867e79; */
-    /* background-color: #afbbbbab; */
     background-color:rgba(166, 166, 175, 0.856);
-    margin-top: 5px;
-    margin-bottom: 20px;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 button:hover{
-    background-color:rgba(166, 166, 175, 0.5)
+    background-color:rgba(166, 166, 175, 0.5);
+    border-color: rgba(166, 166, 175, 0.5);
+}
+
+button:active{
+    border: none;
+}
+#db{
+    margin-bottom: 10%;
 }
