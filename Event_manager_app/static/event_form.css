@@ -15,6 +15,7 @@ form{
     background-color: rgba(206, 211, 212, 0.63);
     padding: 0 30px 10px 20px;
     font-weight: 500;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 h2{
@@ -33,19 +34,19 @@ h2{
     -ms-perspective-origin-x: 40cm;
 }
 #from{
-    margin : 6px 0 6px 43px;
+    margin : 6px 0 6px 46px;
 }
 #to{
-    margin : 6px 0 6px 66px;
+    margin : 6px 0 6px 72px;
 }
 #deadline{
-    margin : 6px 0 6px 15px;
+    margin : 6px 0 6px 17px;
 }
 #pswd{
     margin : 6px 0 6px 0px;
 }
 #email{
-    margin : 6px 0 6px 0px;
+    margin : 6px 0 6px -1px;
 }
 #reset{
     margin : 5px 10px 5px 7px;

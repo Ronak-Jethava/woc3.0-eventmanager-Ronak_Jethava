@@ -37,7 +37,7 @@ def form(request):
                 data.save()
 
             subject = "Registration successful"
-            message = "".join(["Dear enthusist,\nYour registration for the event ", str(event_details.name)," is successfully done.\n\nYour Registration details :\nYour id : ", str(data.id), "\nYour Name : ", str(data.name), "\nContact No :", str(data.contact), "\n\nEvent details : \nEvent Name : ", str(event_details.name), "\nVenue :", str(event_details.location), "\nTime : From ", str(datetime.strftime(event_details.start_date,'%d-%m-%y')), " at ", str(event_details.start_time),"\n            To ", str(datetime.strftime(event_details.end_date,'%d-%m-%y')), " upto ", str(event_details.end_time),"\nNo. of participates Registered : ", str(data.no_of_people),"\n\nSee you on the event venue."])
+            message = "".join(["Dear enthusist,\nYour registration for the event ", str(event_details.name)," is successfully done.\n\nYour Registration details :\nYour id : ", str(data.id), "\nYour Name : ", str(data.name), "\n\nEvent details : \nEvent Name : ", str(event_details.name), "\nVenue :", str(event_details.location), "\nTime : From ", str(datetime.strftime(event_details.start_date,'%d-%m-%y')), " at ", str(event_details.start_time),"\n            To ", str(datetime.strftime(event_details.end_date,'%d-%m-%y')), " upto ", str(event_details.end_time),"\nNo. of participants Registered : ", str(data.no_of_people),"\n\nSee you on the event venue."])
             send_mail(subject, message, "", [data.email], fail_silently=False)
 
             account_sid = config('TWILIO_SID')
@@ -45,7 +45,7 @@ def form(request):
             client = Client(account_sid, auth_token)
 
             message = client.messages.create(
-                body="".join(["Dear enthusist,\nYour registration for the event ", str(event_details.name)," is successfully done.\n\nYour Registration details :\nYour id : ", str(data.id), "\nYour Name : ", str(data.name), "\nEamil ID :", str(data.email), "\n\nEvent details : \nEvent Name : ", str(event_details.name), "\nVenue :", str(event_details.location), "\n\nTime :\nFrom ", str(datetime.strftime(event_details.start_date,'%d-%m-%y')), " at ", str(event_details.start_time),"\nTo ", str(datetime.strftime(event_details.end_date,'%d-%m-%y')), " upto ", str(event_details.end_time),"\nNo. of participates Registered : ", str(data.no_of_people),"\n\nSee you on the event venue."]),
+                body="".join(["Dear enthusist,\nYour registration for the event ", str(event_details.name)," is successfully done.\n\nYour Registration details :\nYour id : ", str(data.id), "\nYour Name : ", str(data.name), "\n\nEvent details : \nEvent Name : ", str(event_details.name), "\nVenue :", str(event_details.location), "\n\nTime :\nFrom ", str(datetime.strftime(event_details.start_date,'%d-%m-%y')), " at ", str(event_details.start_time),"\nTo ", str(datetime.strftime(event_details.end_date,'%d-%m-%y')), " upto ", str(event_details.end_time),"\nNo. of participants Registered : ", str(data.no_of_people),"\n\nSee you on the event venue."]),
                 from_=config('TWILIO_NUM'),
                 to=contact
             )

@@ -7,15 +7,18 @@ body{
 form{
     border: 3px solid rgba(0, 0, 0, 0.575);
     border-radius: 0.2cm;
-    box-sizing: border-box;
-    position:relative;
-    margin-top: 3%;
+    box-sizing: content-box;
+    position : relative;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
+    height: fit-content;
     background-color: rgba(206, 211, 212, 0.63);
     padding-left : 20px;
     padding-bottom: 10px;
+    overflow: hidden;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h2{
@@ -26,7 +29,7 @@ h2{
 }
 
 #name{ 
-    margin : 6px 0 6px 9.5%; 
+    margin : 6px 0 6px 9%; 
 }
 #contact{ 
     margin : 6px 0 6px 0; 
@@ -40,9 +43,6 @@ h2{
 #people{ 
     margin : 6px 0 6px 0; 
 }
-/* #reset{ 
-    margin : 6px 10px 6px 5px; 
-} */
 #reset{
     margin : 5px 10px 5px 7px;
     padding: 5px 12px 5px 12px;
@@ -84,4 +84,26 @@ div.container {
     bottom: 0;
     top : 10px;
     text-align: center;
+}
+.eventList .event{
+    border: 2.5px solid black;
+    border-radius: 0.3cm;
+    background-color:rgba(116, 52, 161, 0.9);
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    box-shadow: 5px 5px silver;
+    width: 15cm;
+    padding:10px;
+    float:left;
+    position: relative;
+    margin-left: 2.5%;
+    margin-bottom: 2%; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.eventList{
+    position: relative;
+}
+#event_name{
+    font-size: larger;
+    color:cyan;
 }

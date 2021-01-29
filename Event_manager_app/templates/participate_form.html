@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Participate Registration </title>
+    <title> Participant Registration </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'participate_form.css' %}">
     <style>
@@ -16,7 +16,7 @@
         ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            margin-bottom: 1%;
         }
 
         ul li {
@@ -77,8 +77,6 @@
 
 <body>
 
-    <hr>
-
     {% if messages %}
     <ul>
         {% for msg in messages %}
@@ -87,25 +85,27 @@
     </ul>
     {% endif %}
 
-    {% if up_events %}
-    {% for event in up_events %}
-    <div style="text-indent:4cm"> <b> {{event.name}} </b></div>
-    <div style="text-indent:4cm"> <b> Event ID : </b> {{event.id}}<br><br></div>
-    <div style="text-indent:4cm"> <b> Description </b> : {{event.desc}} <br><br></div>
-    <div style="text-indent:4cm"> <b> Begin </b> : {{event.start_date}} at {{event.start_time}} <br></div>
-    <div style="text-indent:4cm"> <b> Conclude </b> : {{event.end_date}} at {{event.end_time}} <br></div>
-    <div style="text-indent:4cm"> <b> Registration Ends </b> : {{event.last_date}} at {{event.last_time}} <br></div>
-    <div style="text-indent:4cm"> <b> Venue </b> : {{event.location}} <br></div>
-    <hr>
-    {% endfor %}
-    {% else %}
-    There is NO EVENT.
-    {% endif %}
+    <div class="eventList">
+        {% if up_events %}
+        {% for event in up_events %}
+        <div class="event">
+            <div> <b id="event_name"> {{event.name}} </b></div>
+            <div> <b id="label"> Event ID : </b> {{event.id}}<br><br></div>
+            <div> <b id="label"> Description : </b> {{event.desc}} <br><br></div>
+            <div> <b id="label"> Begin :</b> {{event.start_date}} at {{event.start_time}} <br></div>
+            <div> <b id="label"> Conclude :</b> {{event.end_date}} at {{event.end_time}} <br></div>
+            <div> <b id="label"> Registration Ends :</b> {{event.last_date}} at {{event.last_time}} <br></div>
+            <div> <b id="label"> Venue :</b> {{event.location}} <br></div>
+        </div>
+        {% endfor %}
+        {% else %}
+        There is NO EVENT.
+        {% endif %}
+    </div>
 
-
-    <form action="participateRegistration" method="POST">
+    <form action="/participateRegistration" method="POST">
         {% csrf_token %}
-        <h2 align="center"> Participate Registration </h2>
+        <h2 align="center"> Participant Registration </h2>
         <div>
             <label for="name"> Name : </label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
@@ -134,7 +134,7 @@
             <input type="radio" id="register_type" name="isGroup" value="2" onclick='Enable_it("people")'> Group
         </div>
         <div>
-            <label for="people"> No. of Participates :</label>
+            <label for="people"> No. of Participants :</label>
             <input type="number" id="people" min='2' max='100' name="no_of_people" placeholder="2" value="2" disabled>
         </div>
         <br>
@@ -144,7 +144,8 @@
         </div>
     </form>
     <div class="container">
-        <button id="home" onclick="window.location.href='http://127.0.0.1:8000/'">  << Back to Home </button>
+        <button id="home" onclick="window.location.href='http://127.0.0.1:8000/'">
+            << Back to Home </button>
     </div>
 </body>
 
