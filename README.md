@@ -14,10 +14,9 @@
 2) Participant will get Email and Message notification about their successful Registration.
 
 #### Hiding Authentication details:
-Since I have implemented the Emial and Message notification, so it's necessary to hide my details. So, I have created .env file to hide the details and there is one .env.example file which is copy of my .env file. Via putting the Email and Twilio Accounts' authentiction details in .env.example approprietly, one can enable Email and Message notifictions.
+   Since I have implemented the Emial and Message notification, so it's necessary to hide my details. So, I have created .env file to hide the details and there is one .env.example file which is copy of my .env file. Via putting the Email and Twilio Accounts' authentiction details in .env.example approprietly, one can enable Email and Message notifictions.
 
 #### Front-end:
-Front-end is created using HTML, CSS and Javascript only and it's a responsive website.
+   Front-end is created using HTML, CSS and Javascript only and it's a responsive website.
 
-#### Demo Video of Web Application:
-[click here](https://drive.google.com/file/d/1ewh6_7YtXH5vg_JSMX6JJmjt3PKt9nwn/view?usp=sharing)
+#### Demo Video of Web Application: [click here](https://drive.google.com/file/d/1ewh6_7YtXH5vg_JSMX6JJmjt3PKt9nwn/view?usp=sharing)
