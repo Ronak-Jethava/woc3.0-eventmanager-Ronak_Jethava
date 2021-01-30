@@ -51,7 +51,6 @@
     </style>
 
     <script>
-
         function Enable_it(Id) {
             document.getElementById(Id).disabled = false;
         }
@@ -80,7 +79,7 @@
     {% if messages %}
     <ul>
         {% for msg in messages %}
-        <li> {{ msg }} <span class="close" onclick="remove_it()"> x </span> </li>
+        <li> {{ msg }} <span class="close" onclick="remove_it()"> X </span> </li>
         {% endfor %}
     </ul>
     {% endif %}
