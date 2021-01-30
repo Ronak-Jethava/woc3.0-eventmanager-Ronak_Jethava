@@ -52,5 +52,5 @@ def form(request):
 
             messages.success(request, 'Registration succesfull.')
         else :
-            messages.error(request, "You have already registerd")
+            messages.error(request, "You have already registerd for "+str(event_details.name)+".")
     return render(request, "participate_form.html", {"up_events":events})

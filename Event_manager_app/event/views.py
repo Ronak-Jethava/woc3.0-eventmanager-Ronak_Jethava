@@ -34,6 +34,6 @@ def form(request):
             send_mail(subject,message,"",[data.email], fail_silently=False)
             messages.success(request, 'Registration succesfull.')
         else :
-            messages.error(request, "You have already registerd")
+            messages.error(request, "Event with same date, time and Location Using your Email ID already registerd")
         return redirect(thisPage)
     return render(request, "event_form.html")
