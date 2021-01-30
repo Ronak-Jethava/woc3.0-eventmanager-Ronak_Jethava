@@ -19,4 +19,4 @@
 #### Front-end:
    Front-end is created using HTML, CSS and Javascript only and it's a responsive website.
 
-#### Demo Video of Web Application: [click here](https://drive.google.com/file/d/1ewh6_7YtXH5vg_JSMX6JJmjt3PKt9nwn/view?usp=sharing)!
+#### Demo Video of Web Application: [click here](https://drive.google.com/file/d/1ewh6_7YtXH5vg_JSMX6JJmjt3PKt9nwn/view?usp=sharing)
